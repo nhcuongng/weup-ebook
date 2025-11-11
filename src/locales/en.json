@@ -58,6 +58,20 @@
     "read_now": "Read Now",
     "buy_book": "Buy Book"
   },
+  "BookPage": {
+    "home": "Home",
+    "books": "Books",
+    "by": "by",
+    "ratings": "ratings",
+    "add_to_wishlist": "Add to Wishlist",
+    "category": "Category",
+    "pages": "Pages",
+    "language": "Language",
+    "published": "Published",
+    "available_formats": "Available Formats",
+    "description": "Description",
+    "tags": "Tags"
+  },
   "DataTable": {
     "no_results": "No results."
   }

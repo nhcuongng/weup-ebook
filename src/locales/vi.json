@@ -58,6 +58,20 @@
     "read_now": "Đọc ngay",
     "buy_book": "Mua sách"
   },
+  "BookPage": {
+    "home": "Trang chủ",
+    "books": "Sách",
+    "by": "của",
+    "ratings": "đánh giá",
+    "add_to_wishlist": "Thêm vào danh sách yêu thích",
+    "category": "Thể loại",
+    "pages": "Số trang",
+    "language": "Ngôn ngữ",
+    "published": "Xuất bản",
+    "available_formats": "Định dạng có sẵn",
+    "description": "Mô tả",
+    "tags": "Thẻ"
+  },
   "DataTable": {
     "no_results": "Không có kết quả."
   }
