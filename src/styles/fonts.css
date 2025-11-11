@@ -1,0 +1,48 @@
+@font-face {
+  font-family: FS Magistral;
+  font-weight: 300;
+  font-style: normal;
+  src: url(/assets/fonts/fs-magistral/FSMagistral-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: FS Magistral;
+  font-weight: 300;
+  font-style: italic;
+  src: url(/assets/fonts/fs-magistral/FSMagistral-LightItalic.ttf) format('truetype');
+}
+@font-face {
+  font-family: FS Magistral;
+  font-weight: 400;
+  font-style: normal;
+  src: url(/assets/fonts/fs-magistral/FSMagistral-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: FS Magistral;
+  font-weight: 400;
+  font-style: italic;
+  src: url(/assets/fonts/fs-magistral/FSMagistral-Italic.ttf) format('truetype');
+}
+@font-face {
+  font-family: FS Magistral;
+  font-weight: 500;
+  font-style: normal;
+  src: url(/assets/fonts/fs-magistral/FSMagistral-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: FS Magistral;
+  font-weight: 500;
+  font-style: italic;
+  src: url(/assets/fonts/fs-magistral/FSMagistral-MediumItalic.ttf) format('truetype');
+}
+@font-face {
+  font-family: FS Magistral;
+  font-weight: 700;
+  font-style: normal;
+  src: url(/assets/fonts/fs-magistral/FSMagistral-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: FS Magistral;
+  font-weight: 700;
+  font-style: italic;
+  src: url(/assets/fonts/fs-magistral/FSMagistral-BoldItalic.ttf) format('truetype');
+}

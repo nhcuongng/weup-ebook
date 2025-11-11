@@ -1,0 +1,64 @@
+{
+  "Index": {
+    "meta_title": "WeUp E-Books - Khám phá thế giới tri thức",
+    "meta_description": "Thư viện sách điện tử chất lượng cao với hàng ngàn đầu sách đa dạng lĩnh vực",
+    "hero_title": "WeUp E-Books",
+    "hero_description": "Khám phá thế giới tri thức với hàng ngàn cuốn sách điện tử chất lượng cao",
+    "explore_library_button": "Khám phá thư viện",
+    "register_free_button": "Đăng ký miễn phí",
+    "featured_books_title": "Sách nổi bật",
+    "featured_books_description": "Những cuốn sách được đánh giá cao và được độc giả yêu thích nhất"
+  },
+  "Navbar": {
+    "sign_in": "Đăng nhập",
+    "sign_up": "Đăng ký",
+    "library": "Thư viện",
+    "latest_books": "Sách mới nhất",
+    "bestsellers": "Sách bestseller",
+    "free_books": "Sách miễn phí",
+    "categories": "Thể loại sách",
+    "features": "Tính năng",
+    "offline_reading": "Đọc offline",
+    "notes_highlights": "Ghi chú & Highlight",
+    "sync_devices": "Đồng bộ đa thiết bị",
+    "night_mode": "Chế độ đọc ban đêm",
+    "bookmarks": "Đánh dấu trang",
+    "search": "Tìm kiếm trong sách",
+    "reading_progress": "Theo dõi tiến độ đọc",
+    "my_library": "Thư viện của tôi",
+    "support": "Hỗ trợ",
+    "faq": "Câu hỏi thường gặp",
+    "user_guide": "Hướng dẫn sử dụng",
+    "contact": "Liên hệ hỗ trợ",
+    "language": "Ngôn ngữ"
+  },
+  "Footer": {
+    "terms_of_service": "Điều khoản dịch vụ",
+    "privacy_policy": "Chính sách bảo mật",
+    "company_description": "WeUp E-Books - Nền tảng đọc sách điện tử hàng đầu Việt Nam. Khám phá hàng ngàn cuốn sách từ các thể loại đa dạng, đọc mọi lúc mọi nơi với trải nghiệm tuyệt vời trên mọi thiết bị.",
+    "social_label": "Mạng xã hội",
+    "copyright": "© 2025 Bản quyền thuộc về WeUp E-Books",
+    "company_address": "Tầng 12, Tòa nhà Công nghệ số, số 123, đường Nguyễn Tuân, phường Thanh Xuân Trung, quận Thanh Xuân, Tp. Hà Nội",
+    "show_on_map": "Hiển thị trên Google Map",
+    "library_title": "Thư viện",
+    "latest_books": "Sách mới nhất",
+    "bestseller_books": "Sách bestseller",
+    "free_books": "Sách miễn phí",
+    "categories": "Thể loại",
+    "about_title": "Về chúng tôi",
+    "about_us": "Giới thiệu",
+    "careers": "Tuyển dụng"
+  },
+  "BookCard": {
+    "cover_image": "Hình bìa",
+    "free": "Miễn phí",
+    "new": "Mới",
+    "bestseller": "Bestseller",
+    "pages": "trang",
+    "read_now": "Đọc ngay",
+    "buy_book": "Mua sách"
+  },
+  "DataTable": {
+    "no_results": "Không có kết quả."
+  }
+}

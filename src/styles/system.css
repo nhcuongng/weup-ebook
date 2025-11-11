@@ -1,0 +1,117 @@
+/* --------------------------------- HEADING -------------------------------- */
+/* #region */
+.heading_1 {
+  line-height: 150%;
+  font-size: 48px;
+  @apply text-neutral-1 font-bold;
+}
+
+.heading_2 {
+  line-height: 150%;
+  font-size: 32px;
+  @apply text-neutral-1 font-bold;
+}
+
+.heading_3 {
+  line-height: 150%;
+  font-size: 24px;
+  @apply text-neutral-1 font-bold;
+}
+/* #endregion */
+
+/* ------------------------------ CONTENT SIZE ------------------------------ */
+/*
+  Custom classes using @apply, leveraging the font sizes and weights
+  defined in your provided tailwind.config.js.
+*/
+/* #region */
+
+/* --- Content/Bold Styles --- */
+.content-bold-24 {
+  @apply text-font-size-content-24 font-bold;
+}
+
+.content-bold-20 {
+  @apply text-font-size-content-20 font-bold;
+}
+
+.content-bold-18 {
+  @apply text-font-size-content-18 font-bold;
+}
+
+.content-bold-16 {
+  @apply text-font-size-content-16 font-bold;
+}
+
+.content-bold-14 {
+  @apply text-font-size-content-14 font-bold;
+}
+
+.content-bold-12 {
+  @apply text-font-size-content-12 font-bold;
+}
+
+/* --- Content/Semi Styles --- */
+.content-semi-20 {
+  @apply text-font-size-content-20 font-semibold; /* Using your custom 'font-semibold' utility */
+}
+
+.content-semi-18 {
+  @apply text-font-size-content-18 font-semibold;
+}
+
+.content-semi-16 {
+  @apply text-font-size-content-16 font-semibold;
+}
+
+.content-semi-14 {
+  @apply text-font-size-content-14 font-semibold;
+}
+
+.content-semi-12 {
+  @apply text-font-size-content-12 font-semibold;
+}
+
+/* --- Content/Medium Styles --- */
+.content-medium-20 {
+  @apply text-font-size-content-20 font-medium; /* Tailwind's default font-medium (500) */
+}
+
+.content-medium-18 {
+  @apply text-font-size-content-18 font-medium;
+}
+
+.content-medium-16 {
+  @apply text-font-size-content-16 font-medium;
+}
+
+.content-medium-14 {
+  @apply text-font-size-content-14 font-medium;
+}
+
+/* --- Content/Regular Styles --- */
+.content-regular-18 {
+  @apply text-font-size-content-18 font-normal; /* Tailwind's default font-normal (400) */
+}
+
+.content-regular-16 {
+  @apply text-font-size-content-16 font-normal;
+}
+
+.content-regular-14 {
+  @apply text-font-size-content-14 font-normal;
+}
+
+.content-regular-12 {
+  @apply text-font-size-content-12 font-normal;
+}
+
+.content-regular-10 {
+  @apply text-font-size-content-10 font-normal;
+}
+
+/* --- Content/Note Styles --- */
+.content-note-14 {
+  @apply text-font-size-content-14 font-normal italic; /* font-normal for weight, italic for style */
+}
+/* #endregion */

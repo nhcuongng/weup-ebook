@@ -1,0 +1,64 @@
+{
+  "Index": {
+    "meta_title": "WeUp E-Books - Discover the World of Knowledge",
+    "meta_description": "High-quality e-book library with thousands of diverse titles across various fields",
+    "hero_title": "WeUp E-Books",
+    "hero_description": "Discover the world of knowledge with thousands of high-quality e-books",
+    "explore_library_button": "Explore Library",
+    "register_free_button": "Sign Up Free",
+    "featured_books_title": "Featured Books",
+    "featured_books_description": "Highly rated books loved by readers"
+  },
+  "Navbar": {
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "library": "Library",
+    "latest_books": "Latest Books",
+    "bestsellers": "Bestsellers",
+    "free_books": "Free Books",
+    "categories": "Categories",
+    "features": "Features",
+    "offline_reading": "Offline Reading",
+    "notes_highlights": "Notes & Highlights",
+    "sync_devices": "Multi-device Sync",
+    "night_mode": "Night Reading Mode",
+    "bookmarks": "Bookmarks",
+    "search": "In-book Search",
+    "reading_progress": "Reading Progress Tracking",
+    "my_library": "My Library",
+    "support": "Support",
+    "faq": "FAQ",
+    "user_guide": "User Guide",
+    "contact": "Contact Support",
+    "language": "Language"
+  },
+  "Footer": {
+    "terms_of_service": "Terms Of Service",
+    "privacy_policy": "Privacy Policy",
+    "company_description": "WeUp E-Books - Vietnam's leading e-book reading platform. Discover thousands of books from diverse genres, read anytime, anywhere with an excellent experience on all devices.",
+    "social_label": "Social",
+    "copyright": "© 2025 Copyright belongs to WeUp E-Books",
+    "company_address": "12th Floor, Digital Technology Building, 123 Nguyen Tuan Street, Thanh Xuan Trung Ward, Thanh Xuan District, Hanoi City",
+    "show_on_map": "Show on Google Map",
+    "library_title": "Library",
+    "latest_books": "Latest Books",
+    "bestseller_books": "Bestseller Books",
+    "free_books": "Free Books",
+    "categories": "Categories",
+    "about_title": "About Us",
+    "about_us": "About Us",
+    "careers": "Careers"
+  },
+  "BookCard": {
+    "cover_image": "Cover Image",
+    "free": "Free",
+    "new": "New",
+    "bestseller": "Bestseller",
+    "pages": "pages",
+    "read_now": "Read Now",
+    "buy_book": "Buy Book"
+  },
+  "DataTable": {
+    "no_results": "No results."
+  }
+}

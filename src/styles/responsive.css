@@ -1,0 +1,4 @@
+.p-auto {
+  @apply px-4;
+  @apply sm:px-4.5;
+}
