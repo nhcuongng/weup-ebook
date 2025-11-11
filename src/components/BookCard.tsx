@@ -52,7 +52,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
       <Link href={`/books/${book.id}`}>
         <div className="relative">
           <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-500 text-sm">{t('cover_image')}</span>
+            <img src={book.coverImage} alt={book.title} className="object-cover w-full h-full" />
           </div>
 
           {/* Badges */}
