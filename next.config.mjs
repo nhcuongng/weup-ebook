@@ -22,9 +22,6 @@ export default bundleAnalyzer(
     },
     poweredByHeader: false,
     reactStrictMode: true,
-    experimental: {
-      serverExternalPackages: ['@electric-sql/pglite'],
-    },
     images: {
       remotePatterns: [
         {

@@ -6,8 +6,9 @@ import Container from '@/components/ui/Container';
 import { mockBooks } from '@/data/booksMock';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
+  const { locale } = await props.params;
   const t = await getTranslations({
-    locale: props.params.locale,
+    locale,
     namespace: 'Index',
   });
 
@@ -18,10 +19,11 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 }
 
 const IndexPage = async (props: { params: { locale: string } }) => {
-  unstable_setRequestLocale(props.params.locale);
+  const { locale } = await props.params;
+  unstable_setRequestLocale(locale);
 
   const t = await getTranslations({
-    locale: props.params.locale,
+    locale,
     namespace: 'Index',
   });
 
