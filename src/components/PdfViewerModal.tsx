@@ -117,6 +117,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({
             onClick={onClose}
             className="p-2 hover:bg-gray-200 rounded-full transition-colors"
             aria-label={t('close')}
+            type="button"
           >
             <X className="w-5 h-5" />
           </button>
@@ -129,6 +130,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({
             disabled={pageNumber <= 1}
             className="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
             aria-label={t('previous_page')}
+            type="button"
           >
             <ChevronLeft className="w-4 h-4" />
             {t('previous_page')}
@@ -143,6 +145,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({
             disabled={pageNumber >= numPages}
             className="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
             aria-label={t('next_page')}
+            type="button"
           >
             {t('next_page')}
             <ChevronRight className="w-4 h-4" />
@@ -153,6 +156,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({
               onClick={zoomOut}
               className="p-2 bg-gray-200 hover:bg-gray-300 rounded transition-colors"
               aria-label={t('zoom_out')}
+              type="button"
             >
               <ZoomOut className="w-4 h-4" />
             </button>
@@ -166,6 +170,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({
               onClick={zoomIn}
               className="p-2 bg-gray-200 hover:bg-gray-300 rounded transition-colors"
               aria-label={t('zoom_in')}
+              type="button"
             >
               <ZoomIn className="w-4 h-4" />
             </button>

@@ -117,11 +117,6 @@
     "vitest": "^2.1.9",
     "vitest-fail-on-console": "^0.7.1"
   },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
-  },
   "release": {
     "branches": [
       "main"
