@@ -8,22 +8,22 @@ import { AllLocales } from '@/utils/AppConfig';
 
 export const metadata: Metadata = {
   icons: [
-    {
-      rel: 'apple-touch-icon',
-      url: '/apple-touch-icon.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      url: '/assets/fint/small-logo.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      url: '/assets/fint/small-logo.png',
-    },
+    // {
+    //   rel: 'apple-touch-icon',
+    //   url: '/apple-touch-icon.png',
+    // },
+    // {
+    //   rel: 'icon',
+    //   type: 'image/png',
+    //   sizes: '32x32',
+    //   url: '/assets/fint/small-logo.png',
+    // },
+    // {
+    //   rel: 'icon',
+    //   type: 'image/png',
+    //   sizes: '16x16',
+    //   url: '/assets/fint/small-logo.png',
+    // },
     // {
     //   rel: 'icon',
     //   type: 'image/png',

@@ -70,7 +70,17 @@
     "published": "Published",
     "available_formats": "Available Formats",
     "description": "Description",
-    "tags": "Tags"
+    "tags": "Tags",
+    "pdf_viewer": {
+      "close": "Close",
+      "previous_page": "Previous Page",
+      "next_page": "Next Page",
+      "zoom_in": "Zoom In",
+      "zoom_out": "Zoom Out",
+      "loading": "Loading PDF...",
+      "error": "Failed to load PDF",
+      "page_info": "Page {current} of {total}"
+    }
   },
   "DataTable": {
     "no_results": "No results."

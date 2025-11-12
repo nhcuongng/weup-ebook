@@ -70,7 +70,17 @@
     "published": "Xuất bản",
     "available_formats": "Định dạng có sẵn",
     "description": "Mô tả",
-    "tags": "Thẻ"
+    "tags": "Thẻ",
+    "pdf_viewer": {
+      "close": "Đóng",
+      "previous_page": "Trang trước",
+      "next_page": "Trang sau",
+      "zoom_in": "Phóng to",
+      "zoom_out": "Thu nhỏ",
+      "loading": "Đang tải PDF...",
+      "error": "Không thể tải PDF",
+      "page_info": "Trang {current} trên {total}"
+    }
   },
   "DataTable": {
     "no_results": "Không có kết quả."
