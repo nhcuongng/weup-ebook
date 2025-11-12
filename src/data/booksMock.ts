@@ -17,6 +17,7 @@ export type Book = {
   language: string;
   format: string[];
   tags: string[];
+  pdfUrl?: string;
 };
 
 export const mockBooks: Book[] = [
@@ -31,7 +32,7 @@ export const mockBooks: Book[] = [
     totalRatings: 2450,
     price: 89000,
     originalPrice: 120000,
-    isFree: false,
+    isFree: true,
     isNew: false,
     isBestseller: true,
     publishedDate: '2023-01-15',
@@ -39,6 +40,7 @@ export const mockBooks: Book[] = [
     language: 'Tiếng Việt',
     format: ['PDF', 'EPUB', 'MOBI'],
     tags: ['Kỹ năng mềm', 'Giao tiếp', 'Lãnh đạo'],
+    pdfUrl: '/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf',
   },
   {
     id: '2',
@@ -58,6 +60,7 @@ export const mockBooks: Book[] = [
     language: 'Tiếng Anh',
     format: ['PDF', 'EPUB'],
     tags: ['Thói quen', 'Năng suất', 'Tự phát triển'],
+    pdfUrl: '/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf',
   },
   {
     id: '3',
@@ -70,7 +73,7 @@ export const mockBooks: Book[] = [
     totalRatings: 1890,
     price: 125000,
     originalPrice: 150000,
-    isFree: false,
+    isFree: true,
     isNew: false,
     isBestseller: true,
     publishedDate: '2023-08-22',
@@ -78,6 +81,7 @@ export const mockBooks: Book[] = [
     language: 'Tiếng Việt',
     format: ['PDF', 'EPUB', 'MOBI'],
     tags: ['Lịch sử', 'Nhân học', 'Triết học'],
+    pdfUrl: '/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf',
   },
   {
     id: '4',
@@ -89,7 +93,7 @@ export const mockBooks: Book[] = [
     rating: 4.6,
     totalRatings: 1560,
     price: 95000,
-    isFree: false,
+    isFree: true,
     isNew: true,
     isBestseller: false,
     publishedDate: '2024-01-05',
@@ -97,6 +101,7 @@ export const mockBooks: Book[] = [
     language: 'Tiếng Anh',
     format: ['PDF', 'EPUB'],
     tags: ['Tài chính', 'Đầu tư', 'Tâm lý học'],
+    pdfUrl: '/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf',
   },
   {
     id: '5',
@@ -116,6 +121,7 @@ export const mockBooks: Book[] = [
     language: 'Tiếng Việt',
     format: ['PDF', 'EPUB', 'MOBI'],
     tags: ['Văn học', 'Triết lý', 'Tâm linh'],
+    pdfUrl: '/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf',
   },
   {
     id: '6',
@@ -128,7 +134,7 @@ export const mockBooks: Book[] = [
     totalRatings: 980,
     price: 110000,
     originalPrice: 135000,
-    isFree: false,
+    isFree: true,
     isNew: false,
     isBestseller: false,
     publishedDate: '2023-11-30',
@@ -136,6 +142,7 @@ export const mockBooks: Book[] = [
     language: 'Tiếng Anh',
     format: ['PDF', 'EPUB'],
     tags: ['Tâm lý học', 'Nhận thức', 'Khoa học'],
+    pdfUrl: '/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf',
   },
   {
     id: '7',
@@ -147,7 +154,7 @@ export const mockBooks: Book[] = [
     rating: 4.7,
     totalRatings: 1340,
     price: 140000,
-    isFree: false,
+    isFree: true,
     isNew: true,
     isBestseller: false,
     publishedDate: '2024-02-14',
@@ -155,6 +162,7 @@ export const mockBooks: Book[] = [
     language: 'Tiếng Anh',
     format: ['PDF', 'EPUB'],
     tags: ['Lập trình', 'Kỹ thuật phần mềm', 'Best practices'],
+    pdfUrl: '/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf',
   },
   {
     id: '8',
@@ -174,5 +182,26 @@ export const mockBooks: Book[] = [
     language: 'Tiếng Việt',
     format: ['PDF', 'EPUB'],
     tags: ['Tuổi trẻ', 'Cuộc sống', 'Sự nghiệp'],
+    pdfUrl: '/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf',
+  },
+  {
+    id: '9',
+    title: 'English Grammar in Use Intermediate',
+    author: 'Raymond Murphy',
+    description: 'The world\'s best-selling grammar book for intermediate learners of English, providing clear explanations and practice exercises.',
+    coverImage: 'https://picsum.photos/200/300?random=9',
+    category: 'Giáo dục',
+    rating: 4.8,
+    totalRatings: 3150,
+    price: 0,
+    isFree: true,
+    isNew: false,
+    isBestseller: true,
+    publishedDate: '2019-01-01',
+    pages: 380,
+    language: 'Tiếng Anh',
+    format: ['PDF'],
+    tags: ['Ngữ pháp', 'Tiếng Anh', 'Học tập'],
+    pdfUrl: '/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf',
   },
 ];

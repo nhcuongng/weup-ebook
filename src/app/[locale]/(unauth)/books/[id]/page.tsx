@@ -3,10 +3,11 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 
 import PdfViewerModal from '@/components/PdfViewerModal';
-import { mockBooks } from '@/data/booksMock';
+import type { Book } from '@/data/booksMock';
+import { fetchBookById } from '@/service/books';
 
 type BookPageProps = {
   params: Promise<{
@@ -20,8 +21,37 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
   const t = useTranslations('BookPage');
   const tCard = useTranslations('BookCard');
   const [isPdfViewerOpen, setIsPdfViewerOpen] = useState(false);
+  const [book, setBook] = useState<Book | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const book = mockBooks.find(b => b.id === id);
+  useEffect(() => {
+    const loadBook = async () => {
+      try {
+        const fetchedBook = await fetchBookById(id);
+        if (!fetchedBook) {
+          notFound();
+        }
+        setBook(fetchedBook);
+      } catch (error) {
+        console.error('Failed to fetch book:', error);
+        notFound();
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadBook();
+  }, [id]);
+
+  if (isLoading) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex justify-center items-center min-h-[400px]">
+          <div className="text-lg">Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   if (!book) {
     notFound();
@@ -62,7 +92,7 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
   };
 
   const handleReadNowClick = () => {
-    if (book.isFree) {
+    if (book?.isFree) {
       setIsPdfViewerOpen(true);
     }
   };
@@ -81,7 +111,7 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
               {t('home')}
             </Link>
             <span className="text-gray-400">/</span>
-            <span className="text-gray-600">{book.title}</span>
+            <span className="text-gray-600">{book?.title}</span>
           </div>
         </nav>
 
@@ -91,24 +121,24 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
             <div className="sticky top-8">
               <div className="relative">
                 <img
-                  src={book.coverImage}
-                  alt={book.title}
+                  src={book?.coverImage}
+                  alt={book?.title}
                   className="w-full max-w-sm mx-auto rounded-lg shadow-lg"
                 />
 
                 {/* Badges */}
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
-                  {book.isFree && (
+                  {book?.isFree && (
                     <span className="bg-green-500 text-white text-sm px-3 py-1 rounded">
                       {tCard('free')}
                     </span>
                   )}
-                  {book.isNew && (
+                  {book?.isNew && (
                     <span className="bg-blue-500 text-white text-sm px-3 py-1 rounded">
                       {tCard('new')}
                     </span>
                   )}
-                  {book.isBestseller && (
+                  {book?.isBestseller && (
                     <span className="bg-red-500 text-white text-sm px-3 py-1 rounded">
                       {tCard('bestseller')}
                     </span>
@@ -123,23 +153,23 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
             <div className="space-y-6">
               {/* Title and Author */}
               <div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">{book.title}</h1>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">{book?.title}</h1>
                 <p className="text-xl text-gray-600">
                   {t('by')}
                   {' '}
-                  {book.author}
+                  {book?.author}
                 </p>
               </div>
 
               {/* Rating */}
               <div className="flex items-center space-x-4">
                 <div className="flex items-center">
-                  {renderStars(book.rating)}
+                  {renderStars(book?.rating || 0)}
                 </div>
-                <span className="text-lg font-semibold">{book.rating}</span>
+                <span className="text-lg font-semibold">{book?.rating}</span>
                 <span className="text-gray-500">
                   (
-                  {book.totalRatings}
+                  {book?.totalRatings}
                   {' '}
                   {t('ratings')}
                   )
@@ -148,16 +178,16 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
 
               {/* Price */}
               <div className="flex items-center space-x-4">
-                {book.isFree
+                {book?.isFree
                   ? (
                       <span className="text-2xl font-bold text-green-600">{tCard('free')}</span>
                     )
                   : (
                       <div className="flex items-center space-x-3">
                         <span className="text-2xl font-bold text-red-600">
-                          {formatPrice(book.price)}
+                          {formatPrice(book?.price || 0)}
                         </span>
-                        {book.originalPrice && (
+                        {book?.originalPrice && (
                           <span className="text-lg text-gray-400 line-through">
                             {formatPrice(book.originalPrice)}
                           </span>
@@ -173,7 +203,7 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
                   onClick={handleReadNowClick}
                   className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors"
                 >
-                  {book.isFree ? tCard('read_now') : tCard('buy_book')}
+                  {book?.isFree ? tCard('read_now') : tCard('buy_book')}
                 </button>
                 <button
                   type="button"
@@ -190,28 +220,28 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
                     {t('category')}
                     :
                   </span>
-                  <span className="ml-2 text-gray-600">{book.category}</span>
+                  <span className="ml-2 text-gray-600">{book?.category}</span>
                 </div>
                 <div>
                   <span className="font-semibold text-gray-700">
                     {t('pages')}
                     :
                   </span>
-                  <span className="ml-2 text-gray-600">{book.pages}</span>
+                  <span className="ml-2 text-gray-600">{book?.pages}</span>
                 </div>
                 <div>
                   <span className="font-semibold text-gray-700">
                     {t('language')}
                     :
                   </span>
-                  <span className="ml-2 text-gray-600">{book.language}</span>
+                  <span className="ml-2 text-gray-600">{book?.language}</span>
                 </div>
                 <div>
                   <span className="font-semibold text-gray-700">
                     {t('published')}
                     :
                   </span>
-                  <span className="ml-2 text-gray-600">{book.publishedDate}</span>
+                  <span className="ml-2 text-gray-600">{book?.publishedDate}</span>
                 </div>
               </div>
 
@@ -219,7 +249,7 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
               <div>
                 <h3 className="text-lg font-semibold mb-3">{t('available_formats')}</h3>
                 <div className="flex space-x-2">
-                  {book.format.map(format => (
+                  {book?.format.map(format => (
                     <span
                       key={format}
                       className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
@@ -233,14 +263,14 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
               {/* Description */}
               <div>
                 <h3 className="text-lg font-semibold mb-3">{t('description')}</h3>
-                <p className="text-gray-700 leading-relaxed">{book.description}</p>
+                <p className="text-gray-700 leading-relaxed">{book?.description}</p>
               </div>
 
               {/* Tags */}
               <div>
                 <h3 className="text-lg font-semibold mb-3">{t('tags')}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {book.tags.map(tag => (
+                  {book?.tags.map(tag => (
                     <span
                       key={tag}
                       className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 cursor-pointer transition-colors"
@@ -260,7 +290,7 @@ const BookPage: React.FC<BookPageProps> = ({ params }) => {
         isOpen={isPdfViewerOpen}
         onClose={handleClosePdfViewer}
         pdfUrl="/assets/english_grammar_in_use_intermediate_2019_5th-ed.pdf"
-        title={book.title}
+        title={book?.title || ''}
       />
     </>
   );

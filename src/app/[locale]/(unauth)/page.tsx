@@ -3,7 +3,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import BookCard from '@/components/BookCard';
 import { Button } from '@/components/ui/button';
 import Container from '@/components/ui/Container';
-import { mockBooks } from '@/data/booksMock';
+import { fetchBooks } from '@/service/books';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const { locale } = await props.params;
@@ -27,7 +27,8 @@ const IndexPage = async (props: { params: { locale: string } }) => {
     namespace: 'Index',
   });
 
-  const featuredBooks = mockBooks.slice(0, 6);
+  const books = await fetchBooks();
+  const featuredBooks = books.slice(0, 6);
 
   return (
     <>
