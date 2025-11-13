@@ -41,14 +41,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-files
-          path: dist/
+          path: .next/
           retention-days: 1
 
   deploy-develop:
     needs: build
     runs-on: ubuntu-latest
     environment: secret
-    if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/cicd'
 
     env:
       DEPLOY_DIR: ~/weup-elearning
@@ -61,7 +61,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist-files
-          path: dist/
+          path: .next/
 
       - name: Setup SSH
         run: |
@@ -74,7 +74,7 @@ jobs:
         run: |
           # Create deployment directory and deploy files
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "mkdir -p ${{ env.DEPLOY_DIR }}"
-          scp -i ~/.ssh/id_rsa -r ./dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DEPLOY_DIR }}/
+          scp -i ~/.ssh/id_rsa -r ./.next/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DEPLOY_DIR }}/.next
 
       - name: Setup environment
         run: |
@@ -91,7 +91,7 @@ jobs:
             if pm2 list --namespace ${{ env.PM2_NAMESPACE }} | grep -q '${{ env.APP_NAME }}'; then
               pm2 restart ${{ env.APP_NAME }} --namespace ${{ env.PM2_NAMESPACE }} --update-env
             else
-              pm2 start index.js --name ${{ env.APP_NAME }} --namespace ${{ env.PM2_NAMESPACE }}
+              pm2 start npm -- start --name ${{ env.APP_NAME }} --namespace ${{ env.PM2_NAMESPACE }}
             fi"
 
       - name: Cleanup SSH
