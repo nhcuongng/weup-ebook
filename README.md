@@ -2,6 +2,21 @@
 
 A modern e-learning platform built with Next.js, featuring internationalization, PDF viewing capabilities, and a comprehensive book management system.
 
+## 🚀 Demo
+
+<figure>
+  <img src="public/demo/homepage.png?raw=true" alt="Trulli" style="width:100%">
+  <figcaption>Fig.1 - Home page</figcaption>
+</figure>
+<figure>
+  <img src="public/demo/book-detail.png?raw=true" alt="Trulli" style="width:100%">
+  <figcaption>Fig.2 - Book detail</figcaption>
+</figure>
+<figure>
+  <img src="public/demo/preview-pdf.png?raw=true" alt="Trulli" style="width:100%">
+  <figcaption>Fig.3 - Preview PDF</figcaption>
+</figure>
+
 ## Main Libraries and Technologies
 
 ### Core Framework
@@ -217,7 +232,7 @@ The project uses Vitest for testing:
 yarn test
 ```
 
-## 📦 Build & Deployment
+## Build & Deployment
 
 ```bash
 # Create production build
