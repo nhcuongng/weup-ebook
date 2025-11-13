@@ -25,23 +25,6 @@ export default bundleAnalyzer(
         },
       ],
     },
-    // webpack(config) {
-    //   Object.defineProperty(config, 'devtool', {
-    //     get() {
-    //       return 'source-map';
-    //     },
-    //     set() {},
-    //   });
-    //   return config;
-    // },
-    webpack: (config, { dev }) => {
-      if (dev) {
-        // set DEVTOOL in .env.local (e.g. "DEVTOOL=eval-cheap-source-map")
-        // more options here: https://webpack.js.org/configuration/devtool/
-        config.devtool = false || 'eval-source-map';
-      }
-      return config;
-    },
   }),
 
 );

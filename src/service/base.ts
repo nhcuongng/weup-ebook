@@ -8,16 +8,24 @@ type TParamFetch = {
 export class BaseService {
   prefix = '/api';
 
-  url: string = '';
+  url: URL;
 
   host = process.env.NEXT_PUBLIC_APP_URL || 'http://localhos:3000';
 
   constructor(private endpoint: string) {
-    this.url = `${this.host}/${this.prefix}/${this.endpoint}`;
+    this.url = new URL(`${this.host}/${this.prefix}/${this.endpoint}`);
   }
 
   parseError(error: any) {
     return error.message || `Fetched error`;
+  }
+
+  setUrlSearchParams(object: { [x: string]: any }) {
+    if (_.isObject(object)) {
+      Object.keys(object).forEach((key) => {
+        this.url.searchParams.append(key, object[key]);
+      });
+    }
   }
 
   async fetch<T = any>(params: TParamFetch) {
