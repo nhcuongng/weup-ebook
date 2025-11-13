@@ -3,6 +3,7 @@ import '@/styles/global.css';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import { use } from 'react';
 
 import { AllLocales } from '@/utils/AppConfig';
 
@@ -49,11 +50,12 @@ export function generateStaticParams() {
 
 type LayoutProps = {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export default function RootLayout(props: LayoutProps) {
-  unstable_setRequestLocale(props.params.locale);
+  const { locale } = use(props.params);
+  unstable_setRequestLocale(locale);
 
   // Using internationalization in Client Components
   const messages = useMessages();
@@ -62,14 +64,14 @@ export default function RootLayout(props: LayoutProps) {
   // Solution provided by the package itself: https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
 
   return (
-    <html lang={props.params.locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="bg-background text-foreground antialiased overflow-x-hidden" suppressHydrationWarning>
         {/* PRO: Dark mode support for Shadcn UI */}
         <NextIntlClientProvider
-          locale={props.params.locale}
+          locale={locale}
           messages={messages}
         >
           {props.children}
